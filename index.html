@@ -1220,7 +1220,171 @@ Thanks!</textarea>
             </div>
         </div>
 
-        <!-- Slide 8: Side-by-Side Comparison (VISUAL) -->
+        <!-- Slide 8: Monday.com Integration Deep Dive (VISUAL) -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>MONDAY.COM INTEGRATION</h2>
+            </div>
+            <div style="max-width: 1400px; width: 100%;">
+                <div style="background: #dbeafe; padding: 30px; border-radius: 12px; border-left: 6px solid #3b82f6; margin-bottom: 40px;">
+                    <h3 style="color: #1e40af; font-size: 1.5em; margin-bottom: 15px;">💡 How Everything Works with Monday.com</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #2d3748;">Monday.com is your single source of truth. Every task, status update, and piece of feedback lives there. Our system adds the intelligence layer on top - capacity calculation, smart scheduling, and automation.</p>
+                </div>
+
+                <!-- Q&A Format -->
+                <div style="display: flex; flex-direction: column; gap: 30px;">
+                    
+                    <!-- Q1 -->
+                    <div style="background: white; border-radius: 12px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #f3e8ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="color: #6b21a8; font-size: 1.3em; margin-bottom: 10px;">❓ When CI briefs, will it automatically be loaded on Monday task board?</h4>
+                        </div>
+                        <div style="background: #f0fdf4; padding: 25px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #15803d; font-size: 1.2em; margin-bottom: 15px;">✅ YES - AUTOMATIC AND IMMEDIATE</h4>
+                            <p style="color: #2d3748; font-size: 1.05em; line-height: 1.8; margin-bottom: 15px;">The moment CI clicks "Submit Brief":</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #4a5568; font-size: 1.05em;">✓ Task created in Monday.com (2 seconds)</li>
+                                <li style="padding: 8px 0; color: #4a5568; font-size: 1.05em;">✓ Status set to <strong>"Pending Approval"</strong> 🟡</li>
+                                <li style="padding: 8px 0; color: #4a5568; font-size: 1.05em;">✓ CI can see it in Monday board immediately</li>
+                                <li style="padding: 8px 0; color: #4a5568; font-size: 1.05em;">✓ Developer gets notification</li>
+                                <li style="padding: 8px 0; color: #4a5568; font-size: 1.05em;">✓ All details populated (client, description, hours, priority)</li>
+                            </ul>
+                        </div>
+                        <div style="margin-top: 20px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+                            <p style="color: #4a5568; font-size: 0.95em; line-height: 1.7;"><strong>Why this is better:</strong> Full transparency from day 1. No lost briefs. Complete audit trail. CI can track status in Monday.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div style="background: white; border-radius: 12px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="color: #92400e; font-size: 1.3em; margin-bottom: 10px;">❓ Will feedback on Monday board after status "Review" be booked automatically?</h4>
+                        </div>
+                        <div style="background: #f0fdf4; padding: 25px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #15803d; font-size: 1.2em; margin-bottom: 15px;">✅ YES - COMPLETELY AUTOMATIC</h4>
+                            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                                <h5 style="color: #2d3748; margin-bottom: 12px; font-size: 1.1em;">What happens automatically:</h5>
+                                <div style="display: grid; gap: 12px;">
+                                    <div style="display: flex; align-items: start; gap: 12px;">
+                                        <span style="background: #3b82f6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</span>
+                                        <p style="color: #4a5568; line-height: 1.7;">Dev changes Monday status to "Review"</p>
+                                    </div>
+                                    <div style="display: flex; align-items: start; gap: 12px;">
+                                        <span style="background: #8b5cf6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</span>
+                                        <p style="color: #4a5568; line-height: 1.7;">Webhook detects change instantly</p>
+                                    </div>
+                                    <div style="display: flex; align-items: start; gap: 12px;">
+                                        <span style="background: #ec4899; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</span>
+                                        <p style="color: #4a5568; line-height: 1.7;">System finds next 1-hour slot in dev's calendar</p>
+                                    </div>
+                                    <div style="display: flex; align-items: start; gap: 12px;">
+                                        <span style="background: #f59e0b; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</span>
+                                        <p style="color: #4a5568; line-height: 1.7;">Monday.com gets comment: "🤖 Review time auto-scheduled: Tuesday 2pm"</p>
+                                    </div>
+                                    <div style="display: flex; align-items: start; gap: 12px;">
+                                        <span style="background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">5</span>
+                                        <p style="color: #4a5568; line-height: 1.7;">CI adds feedback as Monday comment, dev gets notified</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="color: #2d3748; font-size: 1.05em; font-weight: 600;">Feedback lives as Monday.com comments - no separate system!</p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div style="background: white; border-radius: 12px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #fce7f3; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="color: #9f1239; font-size: 1.3em; margin-bottom: 10px;">❓ Before the brief is accepted, will it be loaded on Monday?</h4>
+                        </div>
+                        <div style="background: #f0fdf4; padding: 25px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #15803d; font-size: 1.2em; margin-bottom: 15px;">✅ YES - LOADED IMMEDIATELY</h4>
+                            <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #e5e7eb;">
+                                <p style="color: #2d3748; font-size: 1.05em; line-height: 1.8; margin-bottom: 15px;"><strong>Timeline:</strong></p>
+                                <div style="display: flex; flex-direction: column; gap: 15px;">
+                                    <div style="padding-left: 20px; border-left: 3px solid #9f7aea;">
+                                        <p style="color: #6b21a8; font-weight: 600; margin-bottom: 5px;">1. CI submits brief</p>
+                                        <p style="color: #4a5568;">→ Monday task created with status "Pending Approval"</p>
+                                    </div>
+                                    <div style="padding-left: 20px; border-left: 3px solid #3b82f6;">
+                                        <p style="color: #1e40af; font-weight: 600; margin-bottom: 5px;">2. Dev reviews</p>
+                                        <p style="color: #4a5568;">→ Can see task in Monday OR our dashboard</p>
+                                    </div>
+                                    <div style="padding-left: 20px; border-left: 3px solid #22c55e;">
+                                        <p style="color: #15803d; font-weight: 600; margin-bottom: 5px;">3. Dev accepts/adjusts</p>
+                                        <p style="color: #4a5568;">→ Monday status changes to "Confirmed"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; padding: 20px; background: #dbeafe; border-radius: 8px;">
+                                <p style="color: #1e40af; font-weight: 600; margin-bottom: 8px;">What CI sees while waiting:</p>
+                                <p style="color: #4a5568; font-style: italic;">Status: [Pending Approval] 🟡<br>Assigned: Junior Dev A<br>CI Estimate: 1 hour<br>Dev Estimate: (awaiting approval)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div style="background: white; border-radius: 12px; padding: 35px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #e0f2fe; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <h4 style="color: #075985; font-size: 1.3em; margin-bottom: 10px;">❓ If dev updates the brief time, will CI be notified automatically?</h4>
+                        </div>
+                        <div style="background: #f0fdf4; padding: 25px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #15803d; font-size: 1.2em; margin-bottom: 15px;">✅ YES - INSTANT MULTI-CHANNEL NOTIFICATION</h4>
+                            <div style="background: #fffbeb; padding: 20px; border-radius: 8px; border: 2px solid #f59e0b; margin-bottom: 15px;">
+                                <h5 style="color: #92400e; margin-bottom: 12px; font-size: 1.1em;">When developer adjusts (e.g., 4hrs → 6hrs):</h5>
+                                <div style="display: grid; gap: 15px;">
+                                    <div style="background: white; padding: 15px; border-radius: 6px;">
+                                        <p style="color: #6b21a8; font-weight: 600; margin-bottom: 8px;">📧 Email to CI:</p>
+                                        <p style="color: #4a5568; font-size: 0.95em; font-style: italic;">"Brief Adjustment Required - TimbercCity Filters<br>4 hours → 6 hours (+2 hours)<br>Reason: Advanced filtering needs AJAX..."</p>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 6px;">
+                                        <p style="color: #1e40af; font-weight: 600; margin-bottom: 8px;">💬 Monday.com Updated:</p>
+                                        <p style="color: #4a5568; font-size: 0.95em;">Status: Adjustment Pending 🟡<br>Shows both estimates side-by-side<br>Comment with full explanation added</p>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 6px;">
+                                        <p style="color: #059669; font-weight: 600; margin-bottom: 8px;">📱 Slack Notification:</p>
+                                        <p style="color: #4a5568; font-size: 0.95em; font-style: italic;">"@Sarah - Brief adjustment needed<br>TimbercCity Filters: 4hrs → 6hrs"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: #fef3c7; padding: 20px; border-radius: 8px;">
+                                <p style="color: #92400e; font-weight: 600; margin-bottom: 8px;">⚠️ Important:</p>
+                                <p style="color: #4a5568; line-height: 1.7;">CI must approve adjustment before work begins. This prevents starting work with wrong time allocation and ensures everyone is aligned on realistic expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Summary Box -->
+                <div style="margin-top: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; border-radius: 16px; color: white;">
+                    <h3 style="font-size: 1.8em; margin-bottom: 25px; text-align: center;">🎯 Integration Summary</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div>
+                            <h4 style="font-size: 1.2em; margin-bottom: 15px; opacity: 0.9;">Monday.com = Single Source of Truth</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; opacity: 0.95;">✓ Brief submission → Monday task</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">✓ Developer approval → Status update</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">✓ Hour adjustments → Both estimates shown</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">✓ Work progress → Status tracking</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">✓ Review feedback → Comments</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2em; margin-bottom: 15px; opacity: 0.9;">Our System = Intelligence Layer</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; opacity: 0.95;">🧠 Capacity calculation</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">🧠 Smart scheduling</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">🧠 Automatic review booking</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">🧠 Calendar integration</li>
+                                <li style="padding: 8px 0; opacity: 0.95;">🧠 Multi-channel notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Side-by-Side Comparison (VISUAL) -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>BEFORE vs AFTER</h2>
@@ -1306,7 +1470,7 @@ Thanks!</textarea>
             </div>
         </div>
 
-        <!-- Slide 9: Project Roadmap -->
+        <!-- Slide 10: Project Roadmap -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>PROJECT ROADMAP</h2>
@@ -1350,7 +1514,7 @@ Thanks!</textarea>
             </div>
         </div>
 
-        <!-- Slide 10: Key Features -->
+        <!-- Slide 11: Key Features -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>KEY FEATURES</h2>
@@ -1424,7 +1588,7 @@ Thanks!</textarea>
             </div>
         </div>
 
-        <!-- Slide 11: Expected Outcomes -->
+        <!-- Slide 12: Expected Outcomes -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>THE OUTCOME: FASTER, SMARTER, BETTER</h2>
@@ -1482,7 +1646,7 @@ Thanks!</textarea>
             </div>
         </div>
 
-        <!-- Slide 12: Next Steps -->
+        <!-- Slide 13: Next Steps -->
         <div class="slide title-slide" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
             <h1 style="font-size: 3em;">LET'S BUILD THIS</h1>
             <div style="max-width: 900px; text-align: left; font-size: 1.2em; line-height: 2.2; margin-top: 60px;">
