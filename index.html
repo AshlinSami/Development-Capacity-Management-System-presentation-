@@ -908,7 +908,319 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
             </div>
         </div>
 
-        <!-- Slide 6: Side-by-Side Comparison (VISUAL) -->
+        <!-- Slide 6: Developer Brief Approval (VISUAL) -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>DEVELOPER BRIEF APPROVAL</h2>
+            </div>
+            <div style="max-width: 1400px; width: 100%;">
+                <div style="background: #ebf8ff; padding: 30px; border-radius: 12px; border-left: 6px solid #4299e1; margin-bottom: 40px;">
+                    <h3 style="color: #2c5282; font-size: 1.5em; margin-bottom: 15px;">💡 The Problem This Solves</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #2d3748;">CIs don't always know the technical complexity. They might estimate 4 hours, but the developer knows it's actually a 6-hour job. This creates a mismatch between expectations and reality, leading to missed deadlines and stress.</p>
+                </div>
+
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <h3>📬 Developer Inbox: Pending Briefs</h3>
+                        <div style="background: #fc8181; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">2 Awaiting Approval</div>
+                    </div>
+                    <div class="mockup-body">
+                        
+                        <!-- Brief Card 1 -->
+                        <div style="background: #fffaf0; border: 2px solid #ed8936; border-radius: 12px; padding: 30px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                                <div>
+                                    <h4 style="font-size: 1.4em; color: #2d3748; margin-bottom: 10px;">Subaru: Change Showroom Image</h4>
+                                    <p style="color: #718096; font-size: 0.95em;">Briefed by: Sarah (CI) • Client: Subaru</p>
+                                </div>
+                                <div style="background: #fefcbf; padding: 10px 20px; border-radius: 8px; font-weight: 600; color: #744210;">
+                                    Medium Priority
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                                <p style="color: #4a5568; line-height: 1.7;">Change the image on the Subaru showroom page to the new Forester model.</p>
+                                <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">URL: https://www.subaru.co.za/showroom/</p>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">CI ESTIMATED</p>
+                                    <p style="font-size: 1.8em; font-weight: 700; color: #4299e1;">1 hr</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">SCHEDULED FOR</p>
+                                    <p style="font-size: 1.1em; font-weight: 600; color: #2d3748;">Wed, Dec 4<br>9:00 AM</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">YOUR CAPACITY</p>
+                                    <p style="font-size: 1.1em; font-weight: 600; color: #22543d;">6 hrs free<br>that day</p>
+                                </div>
+                            </div>
+
+                            <div style="background: white; border: 2px dashed #cbd5e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <label style="font-weight: 600; color: #2d3748; display: block; margin-bottom: 10px;">
+                                    ⚙️ Adjust Estimate (if needed)
+                                </label>
+                                <div style="display: flex; gap: 15px; align-items: center;">
+                                    <input type="number" value="1" step="0.5" style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.1em; width: 120px; font-weight: 600;">
+                                    <span style="color: #718096;">hours</span>
+                                    <button style="padding: 8px 20px; background: #edf2f7; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; color: #4a5568;">Suggest: 0.5 hrs</button>
+                                </div>
+                                <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">💡 Based on similar image changes, this typically takes 0.5 hours</p>
+                            </div>
+
+                            <div style="display: flex; gap: 15px;">
+                                <button style="flex: 1; padding: 15px; background: #48bb78; color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
+                                    ✓ Accept Brief (1 hr)
+                                </button>
+                                <button style="padding: 15px 30px; background: white; color: #e53e3e; border: 2px solid #e53e3e; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
+                                    ✗ Decline
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Brief Card 2 - Adjusted Example -->
+                        <div style="background: #fff5f5; border: 2px solid #fc8181; border-radius: 12px; padding: 30px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                                <div>
+                                    <h4 style="font-size: 1.4em; color: #2d3748; margin-bottom: 10px;">TimbercCity: New Product Filter System</h4>
+                                    <p style="color: #718096; font-size: 0.95em;">Briefed by: John (CI) • Client: TimbercCity</p>
+                                </div>
+                                <div style="background: #fed7d7; padding: 10px 20px; border-radius: 8px; font-weight: 600; color: #c53030;">
+                                    High Priority
+                                </div>
+                            </div>
+
+                            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                                <p style="color: #4a5568; line-height: 1.7;">Add advanced filtering to WooCommerce product pages including price range, material type, size dimensions, and stock availability.</p>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">CI ESTIMATED</p>
+                                    <p style="font-size: 1.8em; font-weight: 700; color: #4299e1;">4 hrs</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">SCHEDULED FOR</p>
+                                    <p style="font-size: 1.1em; font-weight: 600; color: #2d3748;">Thu, Dec 5<br>9:00 AM</p>
+                                </div>
+                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">YOUR CAPACITY</p>
+                                    <p style="font-size: 1.1em; font-weight: 600; color: #22543d;">7 hrs free<br>that day</p>
+                                </div>
+                            </div>
+
+                            <div style="background: #fefcbf; border: 2px solid #d69e2e; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <label style="font-weight: 600; color: #744210; display: block; margin-bottom: 10px;">
+                                    ⚠️ Adjust Estimate (if needed)
+                                </label>
+                                <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                                    <input type="number" value="6" step="0.5" style="padding: 12px; border: 2px solid #d69e2e; border-radius: 8px; font-size: 1.1em; width: 120px; font-weight: 600;">
+                                    <span style="color: #744210; font-weight: 600;">hours (adjusted from 4)</span>
+                                </div>
+                                <textarea style="width: 100%; padding: 12px; border: 2px solid #d69e2e; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;" placeholder="Reason for adjustment...">Advanced filtering with 4 different filter types plus AJAX loading will require more time. Need to account for testing across different product types and mobile responsiveness.</textarea>
+                            </div>
+
+                            <div style="background: #ebf8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                <p style="color: #2c5282; font-size: 0.95em;"><strong>📅 New Schedule:</strong> Will need Thursday (6 hrs) + Friday morning (1 hr) to complete</p>
+                                <p style="color: #2c5282; font-size: 0.95em; margin-top: 8px;"><strong>✓ Still on track:</strong> Completion by Friday 10am meets High Priority deadline (2-3 days)</p>
+                            </div>
+
+                            <div style="display: flex; gap: 15px;">
+                                <button style="flex: 1; padding: 15px; background: #48bb78; color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
+                                    ✓ Accept with 6 hrs
+                                </button>
+                                <button style="padding: 15px 30px; background: white; color: #e53e3e; border: 2px solid #e53e3e; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
+                                    ✗ Decline
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid #9f7aea;">
+                        <h4 style="color: #9f7aea; font-size: 1.3em; margin-bottom: 20px;">When Dev Accepts</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Task moves to "Confirmed" in Monday.com</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Calendar blocks updated with final hours</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ 7pace entry adjusted if estimate changed</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ CI gets notification of acceptance</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ If adjusted: CI sees reason + new timeline</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid #4299e1;">
+                        <h4 style="color: #4299e1; font-size: 1.3em; margin-bottom: 20px;">Benefits</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Realistic estimates from the start</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Developer buy-in and ownership</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ No surprise timeline extensions</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Better client expectation management</li>
+                            <li style="padding: 10px 0; color: #4a5568;">✓ Transparent communication on complexity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Automated Review Cycle (VISUAL) -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>AUTOMATED REVIEW CYCLE</h2>
+            </div>
+            <div style="max-width: 1400px; width: 100%;">
+                <div style="background: #f0fff4; padding: 30px; border-radius: 12px; border-left: 6px solid #48bb78; margin-bottom: 40px;">
+                    <h3 style="color: #22543d; font-size: 1.5em; margin-bottom: 15px;">💡 The Problem This Solves</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #2d3748;">CI reviews the work and needs changes. Currently they have to manually schedule follow-up time, ask the dev when they're free, and coordinate back and forth. The review feedback often gets delayed because there's no automatic time allocation.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #4299e1; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white;">
+                            1
+                        </div>
+                        <h4 style="color: #2d3748; margin-bottom: 10px; font-size: 1.2em;">Dev Completes Task</h4>
+                        <p style="color: #718096;">Changes Monday.com status to "Review"</p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #ed8936; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white;">
+                            2
+                        </div>
+                        <h4 style="color: #2d3748; margin-bottom: 10px; font-size: 1.2em;">System Auto-Books Review Time</h4>
+                        <p style="color: #718096;">Finds next 1-hour slot in dev's calendar</p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #48bb78; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2em; color: white;">
+                            3
+                        </div>
+                        <h4 style="color: #2d3748; margin-bottom: 10px; font-size: 1.2em;">CI Adds Feedback</h4>
+                        <p style="color: #718096;">Comments in Monday.com sync to task</p>
+                    </div>
+                </div>
+
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <h3>🔄 Monday.com Status Change Triggers Review</h3>
+                    </div>
+                    <div class="mockup-body">
+                        
+                        <div style="background: #f7fafc; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+                            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                                <div style="background: #4299e1; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600;">
+                                    In Progress
+                                </div>
+                                <div style="font-size: 2em; color: #cbd5e0;">→</div>
+                                <div style="background: #ed8936; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600;">
+                                    Review
+                                </div>
+                            </div>
+                            <p style="color: #4a5568; font-size: 1.05em;">Developer marks task as "Review" in Monday.com</p>
+                        </div>
+
+                        <div style="background: #fffaf0; border: 2px solid #ed8936; border-radius: 12px; padding: 30px; margin-bottom: 30px;">
+                            <h4 style="color: #c05621; font-size: 1.3em; margin-bottom: 20px;">⚡ System Automatically:</h4>
+                            
+                            <div style="display: grid; gap: 20px;">
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #9f7aea;">
+                                    <p style="font-weight: 600; color: #2d3748; margin-bottom: 8px;">📊 Checks Developer's Capacity</p>
+                                    <p style="color: #718096;">Scans calendar for next available 1-hour slot (review time always = 1 hour)</p>
+                                </div>
+
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4299e1;">
+                                    <p style="font-weight: 600; color: #2d3748; margin-bottom: 8px;">📅 Creates Calendar Block</p>
+                                    <p style="color: #718096;">Books "REVIEW: [Task Name]" in developer's next available slot</p>
+                                    <p style="color: #4299e1; font-size: 0.95em; margin-top: 8px;">Example: If status changed Monday 3pm → Review time booked Tuesday 2pm-3pm</p>
+                                </div>
+
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #38b2ac;">
+                                    <p style="font-weight: 600; color: #2d3748; margin-bottom: 8px;">⏱️ Updates 7pace</p>
+                                    <p style="color: #718096;">Adds 1-hour review time entry to track actual feedback implementation time</p>
+                                </div>
+
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #48bb78;">
+                                    <p style="font-weight: 600; color: #2d3748; margin-bottom: 8px;">🔔 Notifies CI & Developer</p>
+                                    <p style="color: #718096;"><strong>To CI:</strong> "Task ready for review. Feedback implementation scheduled for [Date/Time]"</p>
+                                    <p style="color: #718096; margin-top: 5px;"><strong>To Dev:</strong> "Review time auto-booked: [Date/Time]. Awaiting CI feedback."</p>
+                                </div>
+
+                                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #ed8936;">
+                                    <p style="font-weight: 600; color: #2d3748; margin-bottom: 8px;">📉 Adjusts Capacity Dashboard</p>
+                                    <p style="color: #718096;">Reduces developer's available hours by 1 for that day/time slot</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: white; border: 2px solid #cbd5e0; border-radius: 12px; padding: 30px;">
+                            <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 20px;">📝 CI Review Interface in Monday.com</h4>
+                            
+                            <div style="background: #f7fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                                <p style="color: #718096; font-size: 0.9em; margin-bottom: 10px;"><strong>Task:</strong> Subaru Showroom Image Change</p>
+                                <p style="color: #718096; font-size: 0.9em; margin-bottom: 10px;"><strong>Status:</strong> <span style="background: #ed8936; color: white; padding: 4px 12px; border-radius: 4px; font-weight: 600;">Review</span></p>
+                                <p style="color: #718096; font-size: 0.9em;"><strong>Review Time Auto-Scheduled:</strong> Tuesday, Dec 5 at 2:00 PM</p>
+                            </div>
+
+                            <div style="background: #fffaf0; border: 2px dashed #ed8936; border-radius: 8px; padding: 20px;">
+                                <label style="font-weight: 600; color: #2d3748; display: block; margin-bottom: 10px;">
+                                    💬 Review Feedback (syncs to developer's task)
+                                </label>
+                                <textarea style="width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 120px; font-size: 1em;">Please make the following changes:
+
+1. The image needs to be higher resolution (current is pixelated on desktop)
+2. Can you adjust the positioning? It's cutting off the top of the car
+3. Add hover effect with zoom like the other vehicle images
+
+Thanks!</textarea>
+                                
+                                <div style="display: flex; gap: 15px; margin-top: 15px;">
+                                    <button style="padding: 12px 30px; background: #48bb78; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                                        📤 Submit Feedback
+                                    </button>
+                                    <button style="padding: 12px 30px; background: #4299e1; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                                        ✓ Approve as Complete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div style="background: #ebf8ff; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                                <p style="color: #2c5282; font-size: 0.95em;">📌 When you submit feedback, developer sees it immediately and will implement changes during the scheduled Tuesday 2pm review time</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%); padding: 40px; border-radius: 12px;">
+                    <h3 style="color: #22543d; font-size: 1.6em; margin-bottom: 20px; text-align: center;">✓ What This Achieves</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div>
+                            <h4 style="color: #2f855a; margin-bottom: 15px; font-size: 1.2em;">For CIs:</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #2d3748;">✓ No manual scheduling of review time</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Immediate feedback submission</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Know exactly when changes will be done</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Full audit trail of review cycles</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #2f855a; margin-bottom: 15px; font-size: 1.2em;">For Developers:</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Review time protected in calendar</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Clear feedback in one place</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Capacity accurately reflects review work</li>
+                                <li style="padding: 8px 0; color: #2d3748;">✓ Time tracking includes review cycles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Side-by-Side Comparison (VISUAL) -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>BEFORE vs AFTER</h2>
@@ -994,7 +1306,7 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
             </div>
         </div>
 
-        <!-- Slide 7: Project Roadmap -->
+        <!-- Slide 9: Project Roadmap -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>PROJECT ROADMAP</h2>
@@ -1038,7 +1350,7 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
             </div>
         </div>
 
-        <!-- Slide 8: Key Features -->
+        <!-- Slide 10: Key Features -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>KEY FEATURES</h2>
@@ -1067,6 +1379,28 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
                 </div>
 
                 <div class="feature-card cyan">
+                    <h3>Developer Approval System</h3>
+                    <ul>
+                        <li>Devs can adjust CI estimates</li>
+                        <li>Provide complexity reasoning</li>
+                        <li>Accept or decline briefs</li>
+                        <li>Realistic timelines upfront</li>
+                        <li>No surprise extensions</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card green">
+                    <h3>Automated Review Cycle</h3>
+                    <ul>
+                        <li>Auto-schedules review time</li>
+                        <li>Status change triggers booking</li>
+                        <li>1-hour slots automatically allocated</li>
+                        <li>Multiple review cycle support</li>
+                        <li>Zero coordination overhead</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card purple">
                     <h3>Triple Integration</h3>
                     <ul>
                         <li>Monday.com task creation</li>
@@ -1077,7 +1411,7 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
                     </ul>
                 </div>
 
-                <div class="feature-card green">
+                <div class="feature-card blue">
                     <h3>Predictive Analytics</h3>
                     <ul>
                         <li>Historical performance data</li>
@@ -1090,7 +1424,7 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
             </div>
         </div>
 
-        <!-- Slide 9: Expected Outcomes -->
+        <!-- Slide 11: Expected Outcomes -->
         <div class="slide content-slide">
             <div class="slide-header">
                 <h2>THE OUTCOME: FASTER, SMARTER, BETTER</h2>
@@ -1148,7 +1482,7 @@ New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjg
             </div>
         </div>
 
-        <!-- Slide 10: Next Steps -->
+        <!-- Slide 12: Next Steps -->
         <div class="slide title-slide" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
             <h1 style="font-size: 3em;">LET'S BUILD THIS</h1>
             <div style="max-width: 900px; text-align: left; font-size: 1.2em; line-height: 2.2; margin-top: 60px;">
