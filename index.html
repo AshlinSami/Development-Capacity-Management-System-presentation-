@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Capacity Management System - Project Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .title-slide h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.5em;
+            opacity: 0.9;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .title-slide .company {
+            position: absolute;
+            bottom: 40px;
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        /* Content Slides */
+        .content-slide {
+            background: white;
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .slide-header h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Roadmap Styles */
+        .roadmap-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            max-width: 1400px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .roadmap-vertical {
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .milestone-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 300;
+            color: white;
+            position: relative;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .milestone-circle.purple {
+            border-color: #9f7aea;
+            color: #9f7aea;
+        }
+
+        .milestone-circle.blue {
+            border-color: #4299e1;
+            color: #4299e1;
+        }
+
+        .milestone-circle.cyan {
+            border-color: #38b2ac;
+            color: #38b2ac;
+        }
+
+        .milestone-circle.green {
+            border-color: #48bb78;
+            color: #48bb78;
+        }
+
+        .milestone-circle::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .milestone-circle.purple::before {
+            background: #9f7aea;
+        }
+
+        .milestone-circle.blue::before {
+            background: #4299e1;
+        }
+
+        .milestone-circle.cyan::before {
+            background: #38b2ac;
+        }
+
+        .milestone-circle.green::before {
+            background: #48bb78;
+        }
+
+        .milestone-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .milestone-label {
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .milestone-label.purple { color: #9f7aea; }
+        .milestone-label.blue { color: #4299e1; }
+        .milestone-label.cyan { color: #38b2ac; }
+        .milestone-label.green { color: #48bb78; }
+
+        .milestone-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .milestone-content p {
+            font-size: 1em;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Key Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card.purple { border-color: #9f7aea; }
+        .feature-card.blue { border-color: #4299e1; }
+        .feature-card.cyan { border-color: #38b2ac; }
+        .feature-card.green { border-color: #48bb78; }
+
+        .feature-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .feature-card.purple li::before { color: #9f7aea; }
+        .feature-card.blue li::before { color: #4299e1; }
+        .feature-card.cyan li::before { color: #38b2ac; }
+        .feature-card.green li::before { color: #48bb78; }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .column-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .column-content h3 {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .column-content p, .column-content li {
+            font-size: 1em;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .column-content ul {
+            padding-left: 20px;
+        }
+
+        /* Outcome Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-box:nth-child(1) .stat-number { color: #9f7aea; }
+        .stat-box:nth-child(2) .stat-number { color: #4299e1; }
+        .stat-box:nth-child(3) .stat-number { color: #38b2ac; }
+        .stat-box:nth-child(4) .stat-number { color: #48bb78; }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        /* Tech Stack Visual */
+        .tech-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .tech-layer {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 6px solid;
+        }
+
+        .tech-layer:nth-child(1) { border-color: #9f7aea; }
+        .tech-layer:nth-child(2) { border-color: #4299e1; }
+        .tech-layer:nth-child(3) { border-color: #38b2ac; }
+
+        .tech-layer h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .tech-layer:nth-child(1) .tech-tag {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .tech-layer:nth-child(2) .tech-tag {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tech-layer:nth-child(3) .tech-tag {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* Navigation */
+        .slide-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap-container {
+                flex-direction: column;
+            }
+
+            .title-slide h1 {
+                font-size: 2.5em;
+            }
+
+            .slide-header h2 {
+                font-size: 2em;
+            }
+        }
+
+        /* Workflow Diagram */
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .workflow-step::after {
+            content: '↓';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #cbd5e0;
+        }
+
+        .workflow-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .workflow-step:nth-child(1) .step-number { background: #9f7aea; }
+        .workflow-step:nth-child(2) .step-number { background: #4299e1; }
+        .workflow-step:nth-child(3) .step-number { background: #38b2ac; }
+        .workflow-step:nth-child(4) .step-number { background: #48bb78; }
+        .workflow-step:nth-child(5) .step-number { background: #ed8936; }
+
+        .step-content h4 {
+            font-size: 1.2em;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            font-size: 0.95em;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide">
+            <h1>DEVELOPMENT CAPACITY<br>MANAGEMENT SYSTEM</h1>
+            <p class="subtitle">Automated Scheduling, Real-Time Visibility & Smart Resource Allocation</p>
+            <p class="company">Algorithm Agency</p>
+        </div>
+
+        <!-- Slide 2: Project Overview -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>PROJECT OVERVIEW</h2>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <h3>The Challenge</h3>
+                    <p>Our development team currently faces several critical bottlenecks:</p>
+                    <ul>
+                        <li>No visibility into developer capacity when briefing new work</li>
+                        <li>Over-commitment leading to missed deadlines</li>
+                        <li>Manual scheduling causing delays and miscommunication</li>
+                        <li>Difficulty tracking actual vs estimated hours</li>
+                        <li>Clients receiving unrealistic timeline expectations</li>
+                        <li>Time tracking disconnected from project planning</li>
+                    </ul>
+                </div>
+                <div class="column-content">
+                    <h3>The Solution</h3>
+                    <p>An intelligent capacity management system that:</p>
+                    <ul>
+                        <li>Shows real-time developer availability</li>
+                        <li>Auto-schedules tasks based on capacity and priority</li>
+                        <li>Integrates Monday.com, 7pace & Google Calendar</li>
+                        <li>Provides accurate timeline predictions</li>
+                        <li>Prevents over-booking with smart allocation</li>
+                        <li>Tracks performance for continuous improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Project Roadmap -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>PROJECT ROADMAP</h2>
+            </div>
+            <div class="roadmap-container roadmap-vertical">
+                <div class="milestone">
+                    <div class="milestone-circle purple">Q1</div>
+                    <div class="milestone-content">
+                        <div class="milestone-label purple">MILESTONE</div>
+                        <h3>Foundation & Core Integrations</h3>
+                        <p>Database setup, API integrations with Monday.com and Google Calendar, basic capacity calculator, team availability dashboard</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-circle blue">Q2</div>
+                    <div class="milestone-content">
+                        <div class="milestone-label blue">MILESTONE</div>
+                        <h3>Smart Scheduling Engine</h3>
+                        <p>Automated brief intake form, intelligent scheduling based on priority, 7pace integration, real-time WebSocket updates across dashboards</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-circle cyan">Q3</div>
+                    <div class="milestone-content">
+                        <div class="milestone-label cyan">MILESTONE</div>
+                        <h3>Intelligence & Analytics Layer</h3>
+                        <p>Predictive duration suggestions from historical data, capacity alerts, bottleneck detection, comprehensive reporting dashboard</p>
+                    </div>
+                </div>
+
+                <div class="milestone">
+                    <div class="milestone-circle green">Q4</div>
+                    <div class="milestone-content">
+                        <div class="milestone-label green">MILESTONE</div>
+                        <h3>Optimization & Scale</h3>
+                        <p>Mobile optimization, performance tuning, team training, documentation, expanded features based on user feedback</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Key Features -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>KEY FEATURES</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card purple">
+                    <h3>Capacity Dashboard</h3>
+                    <ul>
+                        <li>Real-time developer availability</li>
+                        <li>Daily/weekly capacity views</li>
+                        <li>Color-coded workload indicators</li>
+                        <li>Individual & team analytics</li>
+                        <li>2-3 week forecasting</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card blue">
+                    <h3>Smart Brief Intake</h3>
+                    <ul>
+                        <li>Automated task scheduling</li>
+                        <li>Priority-based allocation</li>
+                        <li>Next-available-slot calculation</li>
+                        <li>Realistic completion dates</li>
+                        <li>Overflow queue management</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card cyan">
+                    <h3>Triple Integration</h3>
+                    <ul>
+                        <li>Monday.com task creation</li>
+                        <li>Google Calendar blocks</li>
+                        <li>7pace time tracking sync</li>
+                        <li>Bi-directional data flow</li>
+                        <li>Automated status updates</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card green">
+                    <h3>Predictive Analytics</h3>
+                    <ul>
+                        <li>Historical performance data</li>
+                        <li>Duration predictions</li>
+                        <li>Bottleneck alerts</li>
+                        <li>Utilization tracking</li>
+                        <li>Accuracy improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: How It Works -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>HOW IT WORKS</h2>
+            </div>
+            <div class="workflow-container">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>CI Opens Brief Form</h4>
+                        <p>Access dashboard, select developer, system instantly shows their next available slot with hours free</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Smart Scheduling Calculation</h4>
+                        <p>Enter task details and estimated hours, select priority level, system suggests optimal start date and completion timeline</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Automated Multi-Platform Creation</h4>
+                        <p>System creates Monday.com task, Google Calendar block, 7pace time entry, and updates capacity database</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Real-Time Updates</h4>
+                        <p>Developer receives notification, dashboard updates instantly via WebSocket, all stakeholders see current status</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Continuous Tracking & Learning</h4>
+                        <p>7pace logs actual hours, system compares to estimates, historical data improves future predictions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Tech Stack -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>TECHNOLOGY STACK</h2>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-layer">
+                    <h3>Frontend Layer</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React 18</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">TanStack Query</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Recharts</span>
+                        <span class="tech-tag">Socket.io Client</span>
+                    </div>
+                </div>
+
+                <div class="tech-layer">
+                    <h3>Backend Layer</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Node.js 20+</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis Cache</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">Bull Queue</span>
+                    </div>
+                </div>
+
+                <div class="tech-layer">
+                    <h3>Infrastructure & APIs</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS/DigitalOcean</span>
+                        <span class="tech-tag">Monday.com API</span>
+                        <span class="tech-tag">7pace API</span>
+                        <span class="tech-tag">Google Calendar API</span>
+                        <span class="tech-tag">GitHub Actions CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Expected Outcomes -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>EXPECTED OUTCOMES</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Reduction in Scheduling Time</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Improved Timeline Accuracy</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Capacity Visibility</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Better Resource Utilization</div>
+                </div>
+            </div>
+            <div style="margin-top: 60px; max-width: 900px;">
+                <h3 style="font-size: 1.8em; color: #2d3748; margin-bottom: 20px; text-align: center;">Business Impact</h3>
+                <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="feature-card purple">
+                        <h3>For the Team</h3>
+                        <ul>
+                            <li>No more over-commitment stress</li>
+                            <li>Clear workload expectations</li>
+                            <li>Better work-life balance</li>
+                            <li>Focus on delivery, not admin</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card blue">
+                        <h3>For Clients</h3>
+                        <ul>
+                            <li>Accurate delivery timelines</li>
+                            <li>Transparent progress tracking</li>
+                            <li>Proactive communication</li>
+                            <li>Increased satisfaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: The Current Problem -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>THE CURRENT PROBLEM</h2>
+            </div>
+            <div class="two-column">
+                <div class="column-content">
+                    <h3>What's Happening Now</h3>
+                    <div style="background: #fff5f5; padding: 30px; border-radius: 12px; border-left: 6px solid #fc8181; margin-bottom: 20px;">
+                        <h4 style="color: #c53030; font-size: 1.3em; margin-bottom: 15px;">Constant Brief Overload</h4>
+                        <p style="line-height: 1.8;">New work is constantly coming in from CIs. Every day there are new briefs, new client requests, urgent fixes, and ongoing projects. The work never stops flowing.</p>
+                    </div>
+
+                    <div style="background: #fff5f5; padding: 30px; border-radius: 12px; border-left: 6px solid #fc8181; margin-bottom: 20px;">
+                        <h4 style="color: #c53030; font-size: 1.3em; margin-bottom: 15px;">No Visibility on Capacity</h4>
+                        <p style="line-height: 1.8;">When a CI wants to brief work, they have no idea if the junior dev has 1 hour free or 20 hours free. They don't know if Monday is fully booked or if there's availability on Tuesday. It's complete guesswork.</p>
+                    </div>
+
+                    <div style="background: #fff5f5; padding: 30px; border-radius: 12px; border-left: 6px solid #fc8181;">
+                        <h4 style="color: #c53030; font-size: 1.3em; margin-bottom: 15px;">Time Fragmentation</h4>
+                        <p style="line-height: 1.8;">Developers get briefed with 3-hour tasks when they only have 2 hours available. Or they get back-to-back briefs that eat up their entire 7-hour day without accounting for context switching, meetings, or buffer time.</p>
+                    </div>
+                </div>
+
+                <div class="column-content">
+                    <h3>The Consequences</h3>
+                    <div style="background: #fffaf0; padding: 30px; border-radius: 12px; border-left: 6px solid #ed8936; margin-bottom: 20px;">
+                        <h4 style="color: #c05621; font-size: 1.3em; margin-bottom: 15px;">Missed Deadlines</h4>
+                        <p style="line-height: 1.8;">Because there's no accurate capacity planning, work gets committed that can't realistically be delivered. Clients get told "3 days" when the dev actually has 6 other tasks queued up.</p>
+                    </div>
+
+                    <div style="background: #fffaf0; padding: 30px; border-radius: 12px; border-left: 6px solid #ed8936; margin-bottom: 20px;">
+                        <h4 style="color: #c05621; font-size: 1.3em; margin-bottom: 15px;">Developer Burnout</h4>
+                        <p style="line-height: 1.8;">Developers are constantly over-committed. They're working on 5 tasks simultaneously, none getting proper attention. Quality suffers, stress increases, and they're always playing catch-up.</p>
+                    </div>
+
+                    <div style="background: #fffaf0; padding: 30px; border-radius: 12px; border-left: 6px solid #ed8936;">
+                        <h4 style="color: #c05621; font-size: 1.3em; margin-bottom: 15px;">Poor Client Communication</h4>
+                        <p style="line-height: 1.8;">We can't give clients accurate timelines because we don't know our actual capacity. This leads to constant "it'll be done soon" conversations instead of "it'll be ready Tuesday at 2pm" confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: The Automation Solution In-Depth -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>HOW AUTOMATION SOLVES THIS</h2>
+            </div>
+            <div style="max-width: 1400px; width: 100%;">
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 2em; color: #2d3748; text-align: center; margin-bottom: 40px;">Real-Time Capacity Awareness</h3>
+                    <div class="two-column">
+                        <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 6px solid #9f7aea;">
+                            <h4 style="font-size: 1.5em; color: #9f7aea; margin-bottom: 20px;">Before Automation</h4>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 15px;">CI: "Hey, can you take on this 3-hour task?"</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 15px;">Dev: "Uh... I think so? Let me check what I have..."</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 15px;">CI: "When can you finish it?"</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568;">Dev: "Maybe by Friday? Not sure..."</p>
+                            <div style="margin-top: 25px; padding: 20px; background: #fff5f5; border-radius: 8px;">
+                                <p style="color: #c53030; font-weight: 600;">Result: Guesswork, stress, and unreliable timelines</p>
+                            </div>
+                        </div>
+
+                        <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 6px solid #48bb78;">
+                            <h4 style="font-size: 1.5em; color: #48bb78; margin-bottom: 20px;">With Automation</h4>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 15px;">CI opens dashboard and instantly sees:</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 10px;">✓ Junior Dev: Monday fully booked (7/7 hours)</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 10px;">✓ Tuesday: 4 hours available (3 hours committed)</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568; margin-bottom: 15px;">✓ Wednesday: 6 hours available (1 hour meeting)</p>
+                            <p style="font-size: 1.1em; line-height: 1.9; color: #4a5568;">System suggests: "Start Tuesday 9am, complete by Wednesday 12pm"</p>
+                            <div style="margin-top: 25px; padding: 20px; background: #f0fff4; border-radius: 8px;">
+                                <p style="color: #22543d; font-weight: 600;">Result: Confidence, accuracy, and realistic expectations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 50px;">
+                    <h3 style="font-size: 2em; color: #2d3748; text-align: center; margin-bottom: 40px;">Intelligent Time Allocation</h3>
+                    <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 6px solid #4299e1;">
+                            <h4 style="font-size: 1.4em; color: #4299e1; margin-bottom: 20px;">Smart Daily Allocation</h4>
+                            <p style="font-size: 1.05em; line-height: 1.8; color: #4a5568; margin-bottom: 20px;">The system knows each developer has a 7-hour working day. When you brief in a 3-hour task, it automatically calculates:</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 10px 0; font-size: 1.05em; color: #4a5568;">• 7 hours total capacity</li>
+                                <li style="padding: 10px 0; font-size: 1.05em; color: #4a5568;">• 3 hours for new task</li>
+                                <li style="padding: 10px 0; font-size: 1.05em; color: #4a5568;">• 4 hours remaining for other work</li>
+                                <li style="padding: 10px 0; font-size: 1.05em; color: #4a5568;">• Auto adds 15% buffer (0.45 hours)</li>
+                            </ul>
+                            <p style="margin-top: 20px; padding: 15px; background: #ebf8ff; border-radius: 8px; font-size: 1.05em; color: #2c5282;">Only 3.55 hours actually available for additional work that day</p>
+                        </div>
+
+                        <div style="background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 6px solid #38b2ac;">
+                            <h4 style="font-size: 1.4em; color: #38b2ac; margin-bottom: 20px;">Priority-Based Scheduling</h4>
+                            <p style="font-size: 1.05em; line-height: 1.8; color: #4a5568; margin-bottom: 20px;">Not all work is equal. The system handles different priorities intelligently:</p>
+                            <div style="margin-bottom: 15px; padding: 15px; background: #fed7d7; border-radius: 8px;">
+                                <p style="font-weight: 600; color: #c53030; margin-bottom: 5px;">URGENT</p>
+                                <p style="font-size: 0.95em; color: #742a2a;">Slots into next available hours, even if partial day. Can split across 2 days if needed.</p>
+                            </div>
+                            <div style="margin-bottom: 15px; padding: 15px; background: #fefcbf; border-radius: 8px;">
+                                <p style="font-weight: 600; color: #744210; margin-bottom: 5px;">STANDARD (3-5 days)</p>
+                                <p style="font-size: 0.95em; color: #5f370e;">Queues for day 3+ to maintain quality. Finds first day with sufficient hours.</p>
+                            </div>
+                            <div style="padding: 15px; background: #e6fffa; border-radius: 8px;">
+                                <p style="font-weight: 600; color: #234e52; margin-bottom: 5px;">LOW PRIORITY</p>
+                                <p style="font-size: 0.95em; color: #234e52;">Scheduled after all standard work. Day 5+ or first available slot.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 2em; color: #2d3748; text-align: center; margin-bottom: 40px;">Preventing Over-Commitment</h3>
+                    <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 1200px; margin: 0 auto;">
+                        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center;">
+                            <div style="text-align: center; padding: 30px; background: #fff5f5; border-radius: 12px;">
+                                <div style="font-size: 3em; color: #fc8181; margin-bottom: 10px;">❌</div>
+                                <h4 style="font-size: 1.3em; color: #c53030; margin-bottom: 15px;">Current State</h4>
+                                <p style="font-size: 1.05em; line-height: 1.8; color: #4a5568;">Developer has 7 briefs pending, each estimated at 4 hours. That's 28 hours of work briefed into a week that only has 35 hours available. Result: everything is late, quality drops, stress high.</p>
+                            </div>
+
+                            <div style="font-size: 3em; color: #cbd5e0;">→</div>
+
+                            <div style="text-align: center; padding: 30px; background: #f0fff4; border-radius: 12px;">
+                                <div style="font-size: 3em; color: #48bb78; margin-bottom: 10px;">✓</div>
+                                <h4 style="font-size: 1.3em; color: #22543d; margin-bottom: 15px;">Automated State</h4>
+                                <p style="font-size: 1.05em; line-height: 1.8; color: #4a5568;">System shows: Week 1 at 90% capacity (31.5/35 hours). Next brief automatically scheduled for Week 2. Impossible to over-commit. Everyone knows exactly when work will be completed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: The Brief-to-Delivery Flow -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>COMPLETE BRIEF-TO-DELIVERY FLOW</h2>
+            </div>
+            <div style="max-width: 1000px;">
+                <div class="workflow-step" style="background: linear-gradient(135deg, #f3e8ff 0%, #faf5ff 100%); border-left: 6px solid #9f7aea;">
+                    <div class="step-number" style="background: #9f7aea;">1</div>
+                    <div class="step-content">
+                        <h4>CI Receives Client Request</h4>
+                        <p style="font-size: 1.05em;">Client needs a new feature or bug fix. CI needs to brief this into the dev team. Instead of guessing timelines or asking developers directly (interrupting their work), CI opens the automated briefing dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" style="background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%); border-left: 6px solid #4299e1;">
+                    <div class="step-number" style="background: #4299e1;">2</div>
+                    <div class="step-content">
+                        <h4>Dashboard Shows Real-Time Availability</h4>
+                        <p style="font-size: 1.05em;">CI sees color-coded calendar: Monday (RED - fully booked), Tuesday (YELLOW - 3hrs free), Wednesday (GREEN - 6hrs free). System displays: "Junior Dev next available: Tuesday 2pm - 4 hours free" with visual capacity bars.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" style="background: linear-gradient(135deg, #d1fae5 0%, #f0fdf4 100%); border-left: 6px solid #38b2ac;">
+                    <div class="step-number" style="background: #38b2ac;">3</div>
+                    <div class="step-content">
+                        <h4>CI Fills Brief Form with Intelligence</h4>
+                        <p style="font-size: 1.05em;">Enters task description, client name, selects task type (form shows historical average: "Similar forms typically take 2.5 hours"). CI inputs 3 hours estimate. Selects priority: Standard (3-5 day turnaround). System instantly calculates: "Can start Tuesday 2pm, expected completion Thursday 11am".</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" style="background: linear-gradient(135deg, #fed7d7 0%, #fffaf0 100%); border-left: 6px solid #48bb78;">
+                    <div class="step-number" style="background: #48bb78;">4</div>
+                    <div class="step-content">
+                        <h4>Automated Multi-System Brief Creation</h4>
+                        <p style="font-size: 1.05em;">CI clicks "Brief In" and system simultaneously creates: Monday.com task card with all details, client info, estimated hours; Google Calendar block "DEV: Client Form Task" Tuesday 2pm-5pm; 7pace time tracking entry initialized for 3 hours; Database record linking everything together. Developer gets notification: "New task briefed: [Task Name] - Start: Tuesday 2pm".</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" style="background: linear-gradient(135deg, #fef3c7 0%, #fefce8 100%); border-left: 6px solid #ed8936;">
+                    <div class="step-number" style="background: #ed8936;">5</div>
+                    <div class="step-content">
+                        <h4>Developer Works with Full Context</h4>
+                        <p style="font-size: 1.05em;">Tuesday arrives. Developer sees calendar block with all details. Opens Monday.com, task is already there with full brief. Starts work, updates status to "In Progress". System watches the clock. Logs time in 7pace automatically as work progresses. Real-time sync keeps capacity dashboard updated for the next CI wanting to brief work.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-step" style="background: linear-gradient(135deg, #cffafe 0%, #f0fdfa 100%); border-left: 6px solid #0891b2; margin-bottom: 0;">
+                    <div class="step-number" style="background: #0891b2;">6</div>
+                    <div class="step-content">
+                        <h4>Completion & Learning Loop</h4>
+                        <p style="font-size: 1.05em;">Task completes Thursday morning. Developer marks Monday.com as "Complete". 7pace shows actual time: 3.2 hours (vs 3 hour estimate). System records: "Form tasks: Average 2.8hrs, Your estimate accuracy: 94%". Next time a similar task is briefed, system suggests more accurate duration. Capacity opens up Thursday, dashboard updates, ready for next brief.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Expected Outcomes & Business Impact -->
+        <div class="slide content-slide">
+            <div class="slide-header">
+                <h2>THE OUTCOME: FASTER, SMARTER, BETTER</h2>
+            </div>
+            <div style="max-width: 1400px; width: 100%;">
+                <div class="stats-container" style="margin-bottom: 50px;">
+                    <div class="stat-box">
+                        <div class="stat-number">10x</div>
+                        <div class="stat-label">Faster Brief Process</div>
+                        <p style="margin-top: 15px; font-size: 0.95em; color: #718096;">From 15-minute back-and-forth to 90-second brief submission</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Zero</div>
+                        <div class="stat-label">Capacity Guesswork</div>
+                        <p style="margin-top: 15px; font-size: 0.95em; color: #718096;">Instant visibility on who can take work and when</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Timeline Confidence</div>
+                        <p style="margin-top: 15px; font-size: 0.95em; color: #718096;">Every brief comes with accurate delivery date</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">More Work Capacity</div>
+                        <p style="margin-top: 15px; font-size: 0.95em; color: #718096;">Better allocation = same team, more output</p>
+                    </div>
+                </div>
+
+                <div class="two-column" style="margin-bottom: 50px;">
+                    <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 6px solid #9f7aea;">
+                        <h3 style="font-size: 1.8em; color: #9f7aea; margin-bottom: 25px;">For Client Managers</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>No more awkward timeline conversations</strong> - You know exactly when work will be done before you commit to the client</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>Brief in seconds, not minutes</strong> - Open dashboard, see availability, brief task, done. No Slack interruptions needed</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>Better client relationships</strong> - Accurate timelines = happy clients = repeat business</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568;">✓ <strong>Full visibility on progress</strong> - See exactly where your client's work is in the queue</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 6px solid #4299e1;">
+                        <h3 style="font-size: 1.8em; color: #4299e1; margin-bottom: 25px;">For Developers</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>No more over-commitment</strong> - System prevents impossible schedules. You're never briefed more than you can handle</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>Clear daily structure</strong> - Wake up knowing exactly what's on your plate and how long each task should take</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568; border-bottom: 1px solid #e2e8f0;">✓ <strong>Less interruption</strong> - No more "can you take this urgent task?" messages. Briefs come through proper channels with proper scheduling</li>
+                            <li style="padding: 15px 0; font-size: 1.1em; line-height: 1.7; color: #4a5568;">✓ <strong>Focus on quality</strong> - Enough time allocated per task means you can do it properly, not rushed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%); padding: 50px; border-radius: 16px; text-align: center;">
+                    <h3 style="font-size: 2.2em; color: #22543d; margin-bottom: 20px;">The Bottom Line</h3>
+                    <p style="font-size: 1.3em; line-height: 1.8; color: #2f855a; max-width: 900px; margin: 0 auto;">Same team. Same hours. But now with perfect visibility, intelligent scheduling, and zero over-commitment. The result? We deliver more work, faster, with better quality, and everyone knows exactly what to expect and when.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Next Steps -->
+        <div class="slide title-slide" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
+            <h1 style="font-size: 3em;">LET'S BUILD THIS</h1>
+            <div style="max-width: 900px; text-align: left; font-size: 1.2em; line-height: 2.2; margin-top: 60px;">
+                <p style="margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.15); border-radius: 8px;">✓ The problem is clear: constant briefs, no capacity visibility, over-committed team</p>
+                <p style="margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.15); border-radius: 8px;">✓ The solution is proven: automated scheduling, real-time capacity tracking, smart allocation</p>
+                <p style="margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.15); border-radius: 8px;">✓ The outcome is transformative: faster briefs, accurate timelines, happier team and clients</p>
+                <p style="margin-top: 50px; padding: 25px; background: rgba(255,255,255,0.25); border-radius: 12px; font-size: 1.4em; text-align: center; font-weight: 600;">Ready to stop guessing and start knowing?</p>
+            </div>
+            <p class="company" style="font-size: 1.3em; opacity: 1; bottom: 50px;">Algorithm Agency • Development Capacity Management System</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple slide navigation indicator
+        const slides = document.querySelectorAll('.slide');
+        const container = document.querySelector('.slide-container');
+        
+        // Update active state on scroll
+        container.addEventListener('scroll', () => {
+            const scrollPosition = container.scrollTop;
+            const slideHeight = window.innerHeight;
+            const currentSlide = Math.round(scrollPosition / slideHeight);
+        });
+
+        // Smooth scroll on arrow key navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                const currentScroll = container.scrollTop;
+                const slideHeight = window.innerHeight;
+                container.scrollTo({
+                    top: currentScroll + slideHeight,
+                    behavior: 'smooth'
+                });
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                const currentScroll = container.scrollTop;
+                const slideHeight = window.innerHeight;
+                container.scrollTo({
+                    top: currentScroll - slideHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
