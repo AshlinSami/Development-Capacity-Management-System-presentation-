@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#667eea">
     <title>Development Capacity Management System - Project Roadmap</title>
     <style>
         * {
@@ -15,6 +19,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .slide-container {
@@ -22,6 +28,8 @@
             height: 100vh;
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-behavior: smooth;
         }
 
         .slide {
@@ -624,8 +632,13 @@
             line-height: 1.6;
         }
 
-        /* Responsive */
+        /* Responsive Design - Mobile Friendly */
         @media (max-width: 968px) {
+            .slide {
+                padding: 40px 20px;
+                min-height: auto;
+            }
+
             .two-column {
                 grid-template-columns: 1fr;
             }
@@ -640,10 +653,291 @@
 
             .slide-header h2 {
                 font-size: 2em;
+                margin-bottom: 40px;
             }
 
             .capacity-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .mockup-container {
+                padding: 20px;
+            }
+
+            .mockup-header {
+                padding: 20px;
+            }
+
+            .mockup-body {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 15px;
+            }
+
+            .title-slide h1 {
+                font-size: 2em;
+                letter-spacing: 1px;
+            }
+
+            .title-slide .subtitle {
+                font-size: 1.2em;
+            }
+
+            .title-slide .company {
+                font-size: 1em;
+                bottom: 20px;
+            }
+
+            .slide-header {
+                margin-bottom: 30px;
+            }
+
+            .slide-header h2 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 25px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3em;
+            }
+
+            .feature-card ul li {
+                font-size: 0.95em;
+            }
+
+            .mockup-container {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .mockup-header h3 {
+                font-size: 1.2em;
+            }
+
+            .mockup-body {
+                padding: 15px;
+            }
+
+            /* Mobile: Stack all grids to single column */
+            div[style*="display: grid"] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            /* Mobile: Reduce font sizes in content */
+            .slide p {
+                font-size: 0.95em;
+                line-height: 1.6;
+            }
+
+            .slide h3 {
+                font-size: 1.4em;
+            }
+
+            .slide h4 {
+                font-size: 1.2em;
+            }
+
+            /* Mobile: Make buttons full width */
+            button {
+                width: 100% !important;
+                margin-bottom: 10px;
+            }
+
+            /* Mobile: Adjust padding on colored boxes */
+            div[style*="padding: 30px"],
+            div[style*="padding: 35px"],
+            div[style*="padding: 40px"] {
+                padding: 20px !important;
+            }
+
+            /* Mobile: Reduce border radius for smaller screens */
+            div[style*="border-radius: 12px"] {
+                border-radius: 8px !important;
+            }
+
+            /* Mobile: Adjust circular numbered steps */
+            div[style*="width: 80px; height: 80px"] {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5em !important;
+            }
+
+            /* Mobile: Adjust input fields */
+            input, textarea {
+                font-size: 16px !important; /* Prevents zoom on iOS */
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                padding: 20px 10px;
+            }
+
+            .title-slide h1 {
+                font-size: 1.6em;
+                letter-spacing: 0.5px;
+            }
+
+            .title-slide .subtitle {
+                font-size: 1em;
+            }
+
+            .slide-header h2 {
+                font-size: 1.5em;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+
+            .slide h3 {
+                font-size: 1.2em;
+            }
+
+            .slide h4 {
+                font-size: 1.1em;
+            }
+
+            .slide p {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2em;
+            }
+
+            .feature-card ul li {
+                font-size: 0.9em;
+                padding: 6px 0;
+            }
+
+            .mockup-container {
+                padding: 10px;
+            }
+
+            .mockup-header {
+                padding: 15px;
+            }
+
+            .mockup-header h3 {
+                font-size: 1.1em;
+            }
+
+            .mockup-body {
+                padding: 10px;
+            }
+
+            /* Mobile: Even smaller padding on colored boxes */
+            div[style*="padding: 20px"],
+            div[style*="padding: 25px"] {
+                padding: 15px !important;
+            }
+
+            /* Mobile: Smaller gaps */
+            div[style*="gap: 30px"] {
+                gap: 15px !important;
+            }
+
+            div[style*="gap: 25px"] {
+                gap: 12px !important;
+            }
+
+            /* Mobile: Smaller margins */
+            div[style*="margin-bottom: 40px"],
+            div[style*="margin-top: 40px"] {
+                margin-bottom: 20px !important;
+                margin-top: 20px !important;
+            }
+
+            /* Mobile: Adjust numbered circles even smaller */
+            div[style*="width: 60px; height: 60px"] {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.3em !important;
+            }
+
+            /* Mobile: Smaller status badges */
+            div[style*="padding: 10px 25px"] {
+                padding: 8px 15px !important;
+                font-size: 0.9em !important;
+            }
+
+            /* Mobile: Compact tables/grids */
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 968px) and (orientation: landscape) {
+            .slide {
+                padding: 20px 15px;
+            }
+
+            .slide-header {
+                margin-bottom: 20px;
+            }
+
+            .slide-header h2 {
+                font-size: 1.6em;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            /* Larger tap targets for touch devices */
+            button {
+                min-height: 48px;
+                font-size: 16px;
+            }
+
+            a {
+                min-height: 44px;
+                display: inline-block;
+                padding: 10px;
+            }
+
+            /* Prevent text selection on mobile */
+            .slide-header h2,
+            .title-slide h1 {
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+
+            .slide-container {
+                overflow: visible;
             }
         }
     </style>
@@ -815,252 +1109,288 @@
             </div>
         </div>
 
-        <!-- Slide 5: New Brief Form (VISUAL) -->
+        <!-- Slide 5: New Work Request Form (UPDATED) -->
         <div class="slide content-slide">
             <div class="slide-header">
-                <h2>NEW SYSTEM: SMART BRIEF FORM</h2>
+                <h2>NEW SYSTEM: REQUEST WORK (CI SIDE)</h2>
             </div>
-            <div class="mockup-container">
-                <div class="mockup-header">
-                    <h3>📝 Brief New Development Task</h3>
-                    <div style="font-size: 0.85em; opacity: 0.9;">Real-time capacity-aware scheduling</div>
-                </div>
-                <div class="mockup-body">
-                    <div class="brief-form">
-                        <div class="form-group">
-                            <label>Client Name</label>
-                            <input type="text" value="Subaru" style="background: #f7fafc;">
+            <div style="max-width: 1400px; width: 100%;">
+                <!-- Key Philosophy Change -->
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin-bottom: 40px; color: white;">
+                    <h3 style="font-size: 1.8em; margin-bottom: 15px;">🎯 Philosophy Shift: Developer-Controlled Scheduling</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;">
+                            <div style="font-size: 1.2em; font-weight: 600; margin-bottom: 10px;">❌ OLD WAY</div>
+                            <div style="font-size: 0.95em; line-height: 1.6;">CI decides: "Book Tuesday 9am-1pm"<br>Dev sees surprise calendar block<br>Often conflicts with their workflow</div>
                         </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; border: 2px solid white;">
+                            <div style="font-size: 1.2em; font-weight: 600; margin-bottom: 10px;">✅ NEW WAY</div>
+                            <div style="font-size: 0.95em; line-height: 1.6;">CI requests: "Need this by Friday"<br>Dev schedules their own blocks<br>Full autonomy + better commitment</div>
+                        </div>
+                    </div>
+                </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="mockup-container">
+                    <div class="mockup-header">
+                        <h3>📝 Request New Development Work</h3>
+                        <div style="font-size: 0.85em; opacity: 0.9;">CI requests work → Developer plans timing → CI gets completion date</div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="brief-form">
                             <div class="form-group">
-                                <label>Area of Support</label>
-                                <select style="background: #f7fafc;">
-                                    <option>Frontend Issue</option>
-                                    <option>Backend Issue</option>
-                                    <option>New Page / Content</option>
-                                    <option>Other</option>
-                                </select>
+                                <label>Client Name</label>
+                                <input type="text" value="Subaru" style="background: #f7fafc;">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Task Description</label>
+                                <textarea style="background: #f7fafc; min-height: 100px;">Update vehicle inventory API integration to include new AutoTrader feed endpoints. Need to modify the data sync process and add error handling.</textarea>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label>Your Time Estimate (CI's best guess)</label>
+                                    <input type="number" value="4" step="0.5" style="background: #f7fafc;">
+                                    <span style="color: #718096; font-size: 0.85em;">💡 System suggests: 3-5 hrs (similar API work)</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Priority / Client Deadline</label>
+                                    <select style="background: #f7fafc;">
+                                        <option selected>High Priority - Client needs by Friday EOD</option>
+                                        <option>Medium Priority - Within next week</option>
+                                        <option>Low Priority - No specific deadline</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label>Assign to Developer</label>
                                 <select style="background: #f7fafc;">
-                                    <option>Junior Dev A (Next available: Wed 9am)</option>
-                                    <option>Junior Dev B (Next available: Fri 9am)</option>
-                                    <option>Senior Dev (Next available: Next Mon)</option>
+                                    <option selected>Junior Dev A</option>
+                                    <option>Junior Dev B</option>
+                                    <option>Senior Dev</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label>Task Description</label>
-                            <textarea style="background: #f7fafc;">Change the image on the Subaru showroom page to the new Forester model.
+                            <div style="background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%); padding: 25px; border-radius: 12px; border-left: 5px solid #4299e1; margin: 25px 0;">
+                                <h4 style="color: #2c5282; font-size: 1.3em; margin-bottom: 15px;">📊 Junior Dev A's Availability Preview</h4>
+                                <p style="color: #2d3748; margin-bottom: 20px;">Check capacity before submitting - know when dev can realistically complete this:</p>
+                                
+                                <div style="display: grid; gap: 12px;">
+                                    <div style="background: white; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <strong style="color: #2d3748;">Tuesday Dec 3:</strong>
+                                            <span style="color: #718096; margin-left: 15px;">2pm-4pm free</span>
+                                        </div>
+                                        <div style="background: #48bb78; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600;">2 hours</div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <strong style="color: #2d3748;">Wednesday Dec 4:</strong>
+                                            <span style="color: #718096; margin-left: 15px;">9am-1pm free</span>
+                                        </div>
+                                        <div style="background: #48bb78; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600;">4 hours</div>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <strong style="color: #2d3748;">Thursday Dec 5:</strong>
+                                            <span style="color: #718096; margin-left: 15px;">2pm-4pm free</span>
+                                        </div>
+                                        <div style="background: #48bb78; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600;">2 hours</div>
+                                    </div>
+                                </div>
 
-URL: https://www.subaru.co.za/showroom/
-New image location: https://drive.google.com/drive/folders/1ow9_lP7E-PQv9_1V7Tjga375CqNMRPue</textarea>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="form-group">
-                                <label>Estimated Hours <span style="color: #718096; font-weight: 400;">(System suggests: 0.5-1 hr based on similar tasks)</span></label>
-                                <input type="number" value="1" step="0.5" style="background: #f7fafc;">
+                                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px; border: 2px solid #48bb78;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <span style="color: #2d3748; font-weight: 600; font-size: 1.1em;">Total Available Before Deadline:</span>
+                                        <span style="color: #22543d; font-weight: 700; font-size: 1.3em;">8 hours</span>
+                                    </div>
+                                    <div style="color: #48bb78; font-weight: 600; margin-top: 10px;">
+                                        ✓ Enough capacity for your 4-hour estimate
+                                    </div>
+                                    <div style="color: #718096; font-size: 0.95em; margin-top: 10px;">
+                                        💬 You can tell client: "We can complete this by Friday"
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label>Priority Level</label>
-                                <select style="background: #f7fafc;">
-                                    <option>Low (No deadline)</option>
-                                    <option selected>Medium (3-5 working days)</option>
-                                    <option>High (2-3 working days)</option>
-                                    <option>Critical (1-2 working days)</option>
-                                    <option>P1 - Same Day</option>
-                                </select>
-                            </div>
+                            <button class="btn btn-primary" style="font-size: 1.2em; padding: 18px;">📤 Submit Work Request</button>
                         </div>
 
-                        <div class="suggestion-box">
-                            <h4>🤖 Smart Scheduling Recommendation</h4>
-                            <p><strong>Junior Dev A</strong> has 6 hours available on <strong>Wednesday, Dec 4</strong> starting at <strong>9:00 AM</strong></p>
-                            <p style="margin-top: 10px;">With 1 hour estimated + 15% buffer (0.15 hrs), this task will take approximately <strong>1.15 hours</strong></p>
-                            <p style="margin-top: 10px; padding: 15px; background: white; border-radius: 6px; font-weight: 600; color: #2d3748;">
-                                📅 <strong>Scheduled Start:</strong> Wednesday, Dec 4 at 9:00 AM<br>
-                                ⏰ <strong>Expected Completion:</strong> Wednesday, Dec 4 at 10:15 AM<br>
-                                ✓ <strong>Status:</strong> On track for Medium priority (3-5 day window)
-                            </p>
+                        <div style="margin-top: 30px; padding: 25px; background: #f0fff4; border-radius: 8px; border-left: 4px solid #48bb78;">
+                            <h4 style="color: #22543d; margin-bottom: 15px; font-size: 1.2em;">✨ What happens next:</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ Creates Monday.com task (Status: "Pending Dev Schedule")</li>
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ Developer gets notified to review and plan their schedule</li>
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ Dev will adjust estimate if needed (based on experience)</li>
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ Dev schedules work blocks across their available slots</li>
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ You get confirmation with exact completion date</li>
+                                <li style="padding: 10px 0; color: #2d3748; font-size: 1.05em;">✓ Calendar blocks created automatically (by developer)</li>
+                            </ul>
                         </div>
-
-                        <button class="btn btn-primary">📤 Brief Task & Auto-Schedule</button>
-                    </div>
-
-                    <div style="margin-top: 30px; padding: 20px; background: #ebf8ff; border-radius: 8px; border-left: 4px solid #4299e1;">
-                        <h4 style="color: #2c5282; margin-bottom: 10px;">⚡ What happens when you click "Brief Task":</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 8px 0; color: #2d3748;">✓ Creates Monday.com task with all details</li>
-                            <li style="padding: 8px 0; color: #2d3748;">✓ Blocks Wednesday 9am-10:15am in Junior Dev A's Google Calendar</li>
-                            <li style="padding: 8px 0; color: #2d3748;">✓ Initializes 7pace time tracking entry</li>
-                            <li style="padding: 8px 0; color: #2d3748;">✓ Updates capacity dashboard (Junior Dev A now shows 4.85 hrs free on Wed)</li>
-                            <li style="padding: 8px 0; color: #2d3748;">✓ Sends notification to Junior Dev A with task details</li>
-                            <li style="padding: 8px 0; color: #2d3748;">✓ All done in under 2 seconds!</li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 6: Developer Brief Approval (VISUAL) -->
+        <!-- Slide 6: Developer Scheduling Control (UPDATED) -->
         <div class="slide content-slide">
             <div class="slide-header">
-                <h2>DEVELOPER BRIEF APPROVAL</h2>
+                <h2>DEVELOPER PLANS THE WORK</h2>
             </div>
-            <div style="max-width: 1400px; width: 100%;">
+            <div style="max-width: 1500px; width: 100%;">
                 <div style="background: #ebf8ff; padding: 30px; border-radius: 12px; border-left: 6px solid #4299e1; margin-bottom: 40px;">
-                    <h3 style="color: #2c5282; font-size: 1.5em; margin-bottom: 15px;">💡 The Problem This Solves</h3>
-                    <p style="font-size: 1.1em; line-height: 1.8; color: #2d3748;">CIs don't always know the technical complexity. They might estimate 4 hours, but the developer knows it's actually a 6-hour job. This creates a mismatch between expectations and reality, leading to missed deadlines and stress.</p>
+                    <h3 style="color: #2c5282; font-size: 1.5em; margin-bottom: 15px;">💡 Developer Autonomy & Control</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #2d3748;">Developers receive work requests and schedule them based on their own availability, work patterns, and expertise. They can adjust estimates, split work across days, and protect their focus time.</p>
                 </div>
 
                 <div class="mockup-container">
                     <div class="mockup-header">
-                        <h3>📬 Developer Inbox: Pending Briefs</h3>
-                        <div style="background: #fc8181; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">2 Awaiting Approval</div>
+                        <h3>⚙️ Schedule Work: Subaru API Integration</h3>
+                        <div style="background: #fefcbf; color: #744210; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">Needs Your Schedule</div>
                     </div>
                     <div class="mockup-body">
                         
-                        <!-- Brief Card 1 -->
-                        <div style="background: #fffaf0; border: 2px solid #ed8936; border-radius: 12px; padding: 30px; margin-bottom: 25px;">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                        <!-- Task Info -->
+                        <div style="background: #f7fafc; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 25px;">
                                 <div>
-                                    <h4 style="font-size: 1.4em; color: #2d3748; margin-bottom: 10px;">Subaru: Change Showroom Image</h4>
-                                    <p style="color: #718096; font-size: 0.95em;">Briefed by: Sarah (CI) • Client: Subaru</p>
+                                    <h4 style="color: #2d3748; font-size: 1.3em; margin-bottom: 10px;">Requested by: Sarah (CI)</h4>
+                                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 15px;">Update vehicle inventory API integration to include new AutoTrader feed endpoints. Need to modify the data sync process and add error handling.</p>
+                                    <div style="color: #718096; font-size: 0.95em;">
+                                        <strong>Client:</strong> Subaru &nbsp;|&nbsp; <strong>Priority:</strong> High &nbsp;|&nbsp; <strong>Deadline:</strong> Friday EOD
+                                    </div>
                                 </div>
-                                <div style="background: #fefcbf; padding: 10px 20px; border-radius: 8px; font-weight: 600; color: #744210;">
-                                    Medium Priority
+                                <div style="text-align: center;">
+                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #e2e8f0;">
+                                        <div style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">CI ESTIMATED</div>
+                                        <div style="font-size: 2.5em; font-weight: 700; color: #4299e1;">4 hrs</div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                                <p style="color: #4a5568; line-height: 1.7;">Change the image on the Subaru showroom page to the new Forester model.</p>
-                                <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">URL: https://www.subaru.co.za/showroom/</p>
-                            </div>
-
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">CI ESTIMATED</p>
-                                    <p style="font-size: 1.8em; font-weight: 700; color: #4299e1;">1 hr</p>
-                                </div>
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">SCHEDULED FOR</p>
-                                    <p style="font-size: 1.1em; font-weight: 600; color: #2d3748;">Wed, Dec 4<br>9:00 AM</p>
-                                </div>
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">YOUR CAPACITY</p>
-                                    <p style="font-size: 1.1em; font-weight: 600; color: #22543d;">6 hrs free<br>that day</p>
-                                </div>
-                            </div>
-
-                            <div style="background: white; border: 2px dashed #cbd5e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-                                <label style="font-weight: 600; color: #2d3748; display: block; margin-bottom: 10px;">
-                                    ⚙️ Adjust Estimate (if needed)
-                                </label>
-                                <div style="display: flex; gap: 15px; align-items: center;">
-                                    <input type="number" value="1" step="0.5" style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.1em; width: 120px; font-weight: 600;">
-                                    <span style="color: #718096;">hours</span>
-                                    <button style="padding: 8px 20px; background: #edf2f7; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; color: #4a5568;">Suggest: 0.5 hrs</button>
-                                </div>
-                                <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">💡 Based on similar image changes, this typically takes 0.5 hours</p>
-                            </div>
-
-                            <div style="display: flex; gap: 15px;">
-                                <button style="flex: 1; padding: 15px; background: #48bb78; color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
-                                    ✓ Accept Brief (1 hr)
-                                </button>
-                                <button style="padding: 15px 30px; background: white; color: #e53e3e; border: 2px solid #e53e3e; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
-                                    ✗ Decline
-                                </button>
                             </div>
                         </div>
 
-                        <!-- Brief Card 2 - Adjusted Example -->
-                        <div style="background: #fff5f5; border: 2px solid #fc8181; border-radius: 12px; padding: 30px;">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                        <!-- Estimate Adjustment -->
+                        <div style="background: #fffaf0; border: 2px solid #ed8936; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                            <h4 style="color: #2d3748; font-size: 1.2em; margin-bottom: 15px;">⚙️ Step 1: Adjust Time Estimate (Based on Your Experience)</h4>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 25px; align-items: center;">
                                 <div>
-                                    <h4 style="font-size: 1.4em; color: #2d3748; margin-bottom: 10px;">TimbercCity: New Product Filter System</h4>
-                                    <p style="color: #718096; font-size: 0.95em;">Briefed by: John (CI) • Client: TimbercCity</p>
+                                    <label style="font-weight: 600; color: #2d3748; display: block; margin-bottom: 10px;">Your Estimate:</label>
+                                    <div style="display: flex; align-items: center; gap: 15px;">
+                                        <input type="number" value="5" step="0.5" style="padding: 15px; border: 2px solid #cbd5e0; border-radius: 8px; font-size: 1.3em; width: 100px; font-weight: 600; text-align: center;">
+                                        <span style="color: #4a5568; font-size: 1.1em;">hours</span>
+                                    </div>
                                 </div>
-                                <div style="background: #fed7d7; padding: 10px 20px; border-radius: 8px; font-weight: 600; color: #c53030;">
-                                    High Priority
-                                </div>
-                            </div>
-
-                            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                                <p style="color: #4a5568; line-height: 1.7;">Add advanced filtering to WooCommerce product pages including price range, material type, size dimensions, and stock availability.</p>
-                            </div>
-
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">CI ESTIMATED</p>
-                                    <p style="font-size: 1.8em; font-weight: 700; color: #4299e1;">4 hrs</p>
-                                </div>
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">SCHEDULED FOR</p>
-                                    <p style="font-size: 1.1em; font-weight: 600; color: #2d3748;">Thu, Dec 5<br>9:00 AM</p>
-                                </div>
-                                <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
-                                    <p style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">YOUR CAPACITY</p>
-                                    <p style="font-size: 1.1em; font-weight: 600; color: #22543d;">7 hrs free<br>that day</p>
+                                <div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px;">
+                                        <div style="color: #718096; font-size: 0.9em; margin-bottom: 8px;">💡 YOUR SIMILAR TASKS:</div>
+                                        <div style="color: #2d3748; font-size: 0.95em; line-height: 1.6;">
+                                            • AutoTrader API (last month): <strong>5.5 hrs actual</strong><br>
+                                            • Subaru Dealer API (2 weeks ago): <strong>6 hrs actual</strong><br>
+                                            <strong style="color: #ed8936;">Recommendation: 5-6 hours realistic</strong>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div style="background: #fefcbf; border: 2px solid #d69e2e; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
-                                <label style="font-weight: 600; color: #744210; display: block; margin-bottom: 10px;">
-                                    ⚠️ Adjust Estimate (if needed)
-                                </label>
-                                <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
-                                    <input type="number" value="6" step="0.5" style="padding: 12px; border: 2px solid #d69e2e; border-radius: 8px; font-size: 1.1em; width: 120px; font-weight: 600;">
-                                    <span style="color: #744210; font-weight: 600;">hours (adjusted from 4)</span>
-                                </div>
-                                <textarea style="width: 100%; padding: 12px; border: 2px solid #d69e2e; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;" placeholder="Reason for adjustment...">Advanced filtering with 4 different filter types plus AJAX loading will require more time. Need to account for testing across different product types and mobile responsiveness.</textarea>
-                            </div>
-
-                            <div style="background: #ebf8ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                                <p style="color: #2c5282; font-size: 0.95em;"><strong>📅 New Schedule:</strong> Will need Thursday (6 hrs) + Friday morning (1 hr) to complete</p>
-                                <p style="color: #2c5282; font-size: 0.95em; margin-top: 8px;"><strong>✓ Still on track:</strong> Completion by Friday 10am meets High Priority deadline (2-3 days)</p>
-                            </div>
-
-                            <div style="display: flex; gap: 15px;">
-                                <button style="flex: 1; padding: 15px; background: #48bb78; color: white; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
-                                    ✓ Accept with 6 hrs
-                                </button>
-                                <button style="padding: 15px 30px; background: white; color: #e53e3e; border: 2px solid #e53e3e; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer;">
-                                    ✗ Decline
-                                </button>
+                            <div style="margin-top: 20px;">
+                                <label style="font-weight: 600; color: #2d3748; display: block; margin-bottom: 10px;">Reason for adjustment (optional):</label>
+                                <textarea style="width: 100%; padding: 15px; border: 2px solid #cbd5e0; border-radius: 8px; font-size: 1em; min-height: 80px; font-family: inherit;">Based on my recent API work, these integrations typically take 5-6 hours. Adding extra time for testing and error handling.</textarea>
                             </div>
                         </div>
 
-                    </div>
-                </div>
+                        <!-- Schedule Planning -->
+                        <div style="background: #f0fff4; border: 2px solid #48bb78; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                            <h4 style="color: #22543d; font-size: 1.2em; margin-bottom: 20px;">📅 Step 2: Plan Your Schedule (5 hours needed)</h4>
+                            
+                            <!-- Tuesday -->
+                            <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                    <h5 style="color: #2d3748; font-size: 1.2em; margin: 0;">TUESDAY DEC 3</h5>
+                                    <span style="color: #718096; font-size: 0.95em;">2 hours available</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; margin-bottom: 15px;">
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">9am<br>Booked</div>
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">10am<br>Booked</div>
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">11am<br>Booked</div>
+                                    <div style="background: #cbd5e0; color: #4a5568; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">12pm<br>Lunch</div>
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">1pm<br>Booked</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">2pm<br>FREE</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">3pm<br>FREE</div>
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">4pm<br>Meeting</div>
+                                </div>
+                                <div style="background: #f0fff4; padding: 15px; border-radius: 8px; border: 2px solid #48bb78;">
+                                    <input type="checkbox" checked style="margin-right: 10px; transform: scale(1.3);">
+                                    <strong style="color: #22543d;">Book 2 hours: Tuesday 2pm-4pm</strong>
+                                    <div style="color: #2f855a; margin-top: 8px; margin-left: 30px;">Phase 1: API Setup & Research</div>
+                                </div>
+                            </div>
 
-                <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid #9f7aea;">
-                        <h4 style="color: #9f7aea; font-size: 1.3em; margin-bottom: 20px;">When Dev Accepts</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Task moves to "Confirmed" in Monday.com</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Calendar blocks updated with final hours</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ 7pace entry adjusted if estimate changed</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ CI gets notification of acceptance</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ If adjusted: CI sees reason + new timeline</li>
-                        </ul>
-                    </div>
+                            <!-- Wednesday -->
+                            <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                    <h5 style="color: #2d3748; font-size: 1.2em; margin: 0;">WEDNESDAY DEC 4</h5>
+                                    <span style="color: #718096; font-size: 0.95em;">4 hours available</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; margin-bottom: 15px;">
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">9am<br>FREE</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">10am<br>FREE</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">11am<br>FREE</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">12pm<br>FREE</div>
+                                    <div style="background: #cbd5e0; color: #4a5568; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">1pm<br>Lunch</div>
+                                    <div style="background: #e53e3e; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">2pm<br>Meeting</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">3pm<br>FREE</div>
+                                    <div style="background: #48bb78; color: white; padding: 8px 5px; border-radius: 4px; font-size: 0.75em; text-align: center;">4pm<br>FREE</div>
+                                </div>
+                                <div style="background: #f0fff4; padding: 15px; border-radius: 8px; border: 2px solid #48bb78;">
+                                    <input type="checkbox" checked style="margin-right: 10px; transform: scale(1.3);">
+                                    <strong style="color: #22543d;">Book 3 hours: Wednesday 9am-12pm</strong>
+                                    <div style="color: #2f855a; margin-top: 8px; margin-left: 30px;">Phase 2: Implementation & Testing</div>
+                                </div>
+                            </div>
 
-                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 4px solid #4299e1;">
-                        <h4 style="color: #4299e1; font-size: 1.3em; margin-bottom: 20px;">Benefits</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Realistic estimates from the start</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Developer buy-in and ownership</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ No surprise timeline extensions</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Better client expectation management</li>
-                            <li style="padding: 10px 0; color: #4a5568;">✓ Transparent communication on complexity</li>
-                        </ul>
+                            <!-- Summary -->
+                            <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #48bb78;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center;">
+                                    <div>
+                                        <div style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">TOTAL SCHEDULED</div>
+                                        <div style="font-size: 1.8em; font-weight: 700; color: #48bb78;">5 hours</div>
+                                    </div>
+                                    <div>
+                                        <div style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">COMPLETION DATE</div>
+                                        <div style="font-size: 1.2em; font-weight: 600; color: #2d3748;">Wed 12pm</div>
+                                    </div>
+                                    <div>
+                                        <div style="color: #718096; font-size: 0.85em; margin-bottom: 5px;">DEADLINE STATUS</div>
+                                        <div style="font-size: 1.2em; font-weight: 600; color: #48bb78;">✓ 2 Days Early</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CI Notification Preview -->
+                        <div style="background: #ebf8ff; border-radius: 12px; padding: 25px; border: 2px solid #4299e1;">
+                            <h4 style="color: #2c5282; font-size: 1.2em; margin-bottom: 15px;">📊 Step 3: Summary for CI (Auto-Generated)</h4>
+                            <div style="background: white; padding: 20px; border-radius: 8px;">
+                                <div style="margin-bottom: 15px;">
+                                    <strong style="color: #2d3748;">Work Start:</strong> Tuesday Dec 3 at 2pm<br>
+                                    <strong style="color: #2d3748;">Completion:</strong> Wednesday Dec 4 at 12pm<br>
+                                    <strong style="color: #2d3748;">Ready for Review:</strong> Wednesday Dec 4 at 1pm
+                                </div>
+                                <div style="background: #f7fafc; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                                    <strong style="color: #2d3748;">Time Adjustment:</strong> 5 hours (adjusted from CI's 4 hrs)<br>
+                                    <strong style="color: #2d3748;">Reason:</strong> Based on similar API integration work
+                                </div>
+                                <div style="background: #f0fff4; padding: 15px; border-radius: 6px; border-left: 4px solid #48bb78;">
+                                    <strong style="color: #22543d;">Client Deadline:</strong> Friday Dec 6 EOD ✓ ON TRACK<br>
+                                    <strong style="color: #2f855a; margin-top: 8px; display: block;">💬 Tell client: "Work will be completed by Wednesday afternoon"</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="margin-top: 30px; font-size: 1.2em; padding: 18px; width: 100%;">✓ Confirm Schedule & Notify CI</button>
                     </div>
                 </div>
             </div>
@@ -1874,13 +2204,13 @@ Thanks!</textarea>
                 </div>
 
                 <div class="feature-card cyan">
-                    <h3>Developer Approval System</h3>
+                    <h3>Developer-Controlled Scheduling</h3>
                     <ul>
-                        <li>Devs can adjust CI estimates</li>
-                        <li>Provide complexity reasoning</li>
-                        <li>Accept or decline briefs</li>
-                        <li>Realistic timelines upfront</li>
-                        <li>No surprise extensions</li>
+                        <li>Devs plan their own work blocks</li>
+                        <li>Split tasks across available slots</li>
+                        <li>Adjust estimates based on experience</li>
+                        <li>Full autonomy + stronger commitment</li>
+                        <li>CI gets concrete completion dates</li>
                     </ul>
                 </div>
 
@@ -2023,6 +2353,253 @@ Thanks!</textarea>
                 });
             }
         });
+    </script>
+
+    <!-- Navigation Controls -->
+    <div id="nav-controls" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+        <button id="nav-up" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(102, 126, 234, 0.9); color: white; border: none; cursor: pointer; font-size: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" onmouseover="this.style.background='rgba(102, 126, 234, 1)'; this.style.transform='scale(1.1)';" onmouseout="this.style.background='rgba(102, 126, 234, 0.9)'; this.style.transform='scale(1)';">
+            ↑
+        </button>
+        <button id="nav-down" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(102, 126, 234, 0.9); color: white; border: none; cursor: pointer; font-size: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s;" onmouseover="this.style.background='rgba(102, 126, 234, 1)'; this.style.transform='scale(1.1)';" onmouseout="this.style.background='rgba(102, 126, 234, 0.9)'; this.style.transform='scale(1)';">
+            ↓
+        </button>
+    </div>
+
+    <!-- Slide Counter -->
+    <div id="slide-counter" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000; background: rgba(45, 55, 72, 0.9); color: white; padding: 12px 20px; border-radius: 25px; font-size: 14px; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+        Slide <span id="current-slide">1</span> / 14
+    </div>
+
+    <!-- Fullscreen Button -->
+    <button id="fullscreen-btn" style="position: fixed; top: 30px; right: 30px; z-index: 1000; width: 50px; height: 50px; border-radius: 50%; background: rgba(45, 55, 72, 0.9); color: white; border: none; cursor: pointer; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.3s; backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(45, 55, 72, 1)'; this.style.transform='scale(1.1)';" onmouseout="this.style.background='rgba(45, 55, 72, 0.9)'; this.style.transform='scale(1)';" title="Toggle Fullscreen (F11)">
+        ⛶
+    </button>
+
+    <!-- Enhanced Navigation Script -->
+    <script>
+        const container = document.querySelector('.slide-container');
+        const slides = document.querySelectorAll('.slide');
+        const navUp = document.getElementById('nav-up');
+        const navDown = document.getElementById('nav-down');
+        const slideCounter = document.getElementById('current-slide');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const navControls = document.getElementById('nav-controls');
+
+        let currentSlideIndex = 0;
+        const totalSlides = slides.length;
+
+        // Update slide counter based on scroll position
+        function updateSlideCounter() {
+            const scrollPosition = container.scrollTop;
+            const slideHeight = window.innerHeight;
+            currentSlideIndex = Math.round(scrollPosition / slideHeight);
+            slideCounter.textContent = currentSlideIndex + 1;
+
+            // Update button states
+            navUp.style.opacity = currentSlideIndex === 0 ? '0.5' : '1';
+            navUp.style.cursor = currentSlideIndex === 0 ? 'not-allowed' : 'pointer';
+            navDown.style.opacity = currentSlideIndex === totalSlides - 1 ? '0.5' : '1';
+            navDown.style.cursor = currentSlideIndex === totalSlides - 1 ? 'not-allowed' : 'pointer';
+        }
+
+        // Navigate to specific slide
+        function goToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            const slideHeight = window.innerHeight;
+            container.scrollTo({
+                top: index * slideHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation button handlers
+        navUp.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                goToSlide(currentSlideIndex - 1);
+            }
+        });
+
+        navDown.addEventListener('click', () => {
+            if (currentSlideIndex < totalSlides - 1) {
+                goToSlide(currentSlideIndex + 1);
+            }
+        });
+
+        // Fullscreen toggle
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('Fullscreen not supported');
+                });
+                fullscreenBtn.textContent = '⛶';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.textContent = '⛶';
+            }
+        });
+
+        // Update counter on scroll
+        container.addEventListener('scroll', updateSlideCounter);
+
+        // Touch gestures for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        container.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].clientY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum swipe distance
+            const diff = touchStartY - touchEndY;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe up - next slide
+                    if (currentSlideIndex < totalSlides - 1) {
+                        goToSlide(currentSlideIndex + 1);
+                    }
+                } else {
+                    // Swipe down - previous slide
+                    if (currentSlideIndex > 0) {
+                        goToSlide(currentSlideIndex - 1);
+                    }
+                }
+            }
+        }
+
+        // Keyboard shortcuts info (press '?' to show)
+        let helpVisible = false;
+        const helpOverlay = document.createElement('div');
+        helpOverlay.id = 'help-overlay';
+        helpOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+        `;
+        helpOverlay.innerHTML = `
+            <div style="background: rgba(45, 55, 72, 0.95); padding: 40px 60px; border-radius: 20px; max-width: 600px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <h2 style="margin-bottom: 30px; font-size: 2em; text-align: center; color: #667eea;">Keyboard Shortcuts</h2>
+                <div style="display: grid; gap: 15px; font-size: 1.1em;">
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">↑ / ←</span>
+                        <span>Previous Slide</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">↓ / →</span>
+                        <span>Next Slide</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">Home</span>
+                        <span>First Slide</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">End</span>
+                        <span>Last Slide</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">F11</span>
+                        <span>Fullscreen</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: #a0aec0;">?</span>
+                        <span>Show/Hide Help</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+                        <span style="color: #a0aec0;">Esc</span>
+                        <span>Close Help</span>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; text-align: center; color: #a0aec0; font-size: 0.9em;">
+                    Press Esc or ? to close this help
+                </p>
+            </div>
+        `;
+        document.body.appendChild(helpOverlay);
+
+        // Help overlay toggle
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '?' || e.key === '/') {
+                e.preventDefault();
+                helpVisible = !helpVisible;
+                helpOverlay.style.display = helpVisible ? 'flex' : 'none';
+            } else if (e.key === 'Escape') {
+                helpVisible = false;
+                helpOverlay.style.display = 'none';
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                goToSlide(totalSlides - 1);
+            }
+        });
+
+        // Click overlay to close help
+        helpOverlay.addEventListener('click', (e) => {
+            if (e.target === helpOverlay) {
+                helpVisible = false;
+                helpOverlay.style.display = 'none';
+            }
+        });
+
+        // Hide controls after inactivity (desktop only)
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            navControls.style.opacity = '1';
+            document.getElementById('slide-counter').style.opacity = '1';
+            fullscreenBtn.style.opacity = '1';
+            
+            inactivityTimer = setTimeout(() => {
+                if (window.innerWidth > 768) { // Only hide on desktop
+                    navControls.style.opacity = '0.3';
+                    document.getElementById('slide-counter').style.opacity = '0.3';
+                    fullscreenBtn.style.opacity = '0.3';
+                }
+            }, 3000);
+        }
+
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keydown', resetInactivityTimer);
+        container.addEventListener('scroll', resetInactivityTimer);
+
+        // Initialize
+        updateSlideCounter();
+        resetInactivityTimer();
+
+        // Mobile-specific adjustments
+        if (window.innerWidth <= 768) {
+            // Make navigation buttons slightly smaller on mobile
+            navUp.style.width = '50px';
+            navUp.style.height = '50px';
+            navDown.style.width = '50px';
+            navDown.style.height = '50px';
+            navControls.style.bottom = '20px';
+            navControls.style.right = '20px';
+            document.getElementById('slide-counter').style.bottom = '20px';
+            document.getElementById('slide-counter').style.left = '20px';
+            document.getElementById('slide-counter').style.fontSize = '12px';
+            document.getElementById('slide-counter').style.padding = '10px 15px';
+            fullscreenBtn.style.top = '20px';
+            fullscreenBtn.style.right = '20px';
+            fullscreenBtn.style.width = '45px';
+            fullscreenBtn.style.height = '45px';
+        }
     </script>
 </body>
 </html>
